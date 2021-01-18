@@ -22,7 +22,7 @@ export default function App() {
     console.log(data);
   };
 
-  // add new contact / actions
+  // add new contact
   // const addContact = (name, number) => {
   //   const contact = {
   //     id: shortid.generate(),
@@ -31,21 +31,21 @@ export default function App() {
   //   };
 
   // check unique contact name
-  // if (contacts.find((contact) => contact.name === name)) {
-  //   return toast.error(`${name} is already in contacts`);
-  // }
+  //   if (contacts.find((contact) => contact.name === name)) {
+  //     return toast.error(`${name} is already in contacts`);
+  //   }
 
   //   setContacts((prevState) => [contact, ...prevState]);
   // };
 
-  // remove contact / actions
+  // remove contact
   // const removeContact = (id) => {
   //   setContacts((prevState) =>
   //     prevState.filter((contact) => contact.id !== id)
   //   );
   // };
 
-  // // filter contacts / actions
+  // filter contacts
   // const changeFilter = (e) => {
   //   setFilter(e.currentTarget.value);
   // };
@@ -62,8 +62,11 @@ export default function App() {
       <ContactsForms onSubmit={formSubmitHandler} />
       <ToastContainer position="top-center" autoClose={2000} />
       <h1>Contacts</h1>
-      <Filter />
-      <ContactList />
+      {/* <Filter value={filter} onChange={changeFilter} />
+      <ContactList
+        contacts={getVisibleContacts()}
+        onRemoveContact={removeContact} */}
+      {/* /> */}
     </>
   );
 }
