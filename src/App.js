@@ -62,11 +62,8 @@ export default function App() {
       <ContactsForms onSubmit={formSubmitHandler} />
       <ToastContainer position="top-center" autoClose={2000} />
       <h1>Contacts</h1>
-      {/* <Filter value={filter} onChange={changeFilter} />
-      <ContactList
-        contacts={getVisibleContacts()}
-        onRemoveContact={removeContact} */}
-      {/* /> */}
+      <Filter />
+      <ContactList />
     </>
   );
 }

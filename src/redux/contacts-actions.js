@@ -11,14 +11,14 @@ const addContact = (name, number) => ({
   },
 });
 
-// const removeContact = (id) => ({
-//   type: types.REMOVE,
-//   payload: id,
-// });
+const removeContact = (contactId) => ({
+  type: types.REMOVE,
+  payload: contactId,
+});
 
-// const changeFilter = (value) => ({
-//   type: types.CHANGE_FILTER,
-//   payload: value,
-// });
+const changeFilter = (value) => ({
+  type: types.CHANGE_FILTER,
+  payload: value,
+});
 
-export default { addContact };
+export default { addContact, removeContact, changeFilter };
