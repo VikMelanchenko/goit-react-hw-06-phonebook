@@ -16,3 +16,7 @@ React components are tied to Redux logic when using the react-redux library (con
 
 Step 2
 
+Code refactoring was carried out using the Redux Tookit library. The functions used were 
+- configureStore (), 
+- createAction (), 
+- createReducer ().
