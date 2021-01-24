@@ -6,8 +6,6 @@ import ContactList from './components/ContactList/ContactList';
 
 import Filter from './components/Filter/Filter';
 
-import shortid from 'shortid';
-
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,38 +20,12 @@ export default function App() {
     console.log(data);
   };
 
-  // add new contact
-  // const addContact = (name, number) => {
-  //   const contact = {
-  //     id: shortid.generate(),
-  //     name,
-  //     number,
-  //   };
-
   // check unique contact name
   //   if (contacts.find((contact) => contact.name === name)) {
   //     return toast.error(`${name} is already in contacts`);
   //   }
 
   //   setContacts((prevState) => [contact, ...prevState]);
-  // };
-
-  // remove contact
-  // const removeContact = (id) => {
-  //   setContacts((prevState) =>
-  //     prevState.filter((contact) => contact.id !== id)
-  //   );
-  // };
-
-  // filter contacts
-  // const changeFilter = (e) => {
-  //   setFilter(e.currentTarget.value);
-  // };
-
-  // const getVisibleContacts = () => {
-  //   return contacts.filter((contact) =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase())
-  //   );
   // };
 
   return (

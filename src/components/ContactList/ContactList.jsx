@@ -1,23 +1,24 @@
 import s from '../ContactsForms/ContactsForm.module.scss';
-import ContactListItem from '../ContactListItem/ContactListItem';
 import { connect } from 'react-redux';
 import contactsActions from '../../redux/contacts-actions';
 
-// список добавленных контактов и удаление
+// список добавленных контактов и удаление при клике на кнопку
 const ContactList = ({ contacts, onRemoveContact }) => {
   if (contacts.length === 0) return null;
+
   return (
     <ul className={s.contact__list}>
-      {contacts &&
-        contacts.map((contact, id) => (
-          <ContactListItem
-            key={contact.id}
-            id={id}
-            name={contact.name}
-            number={contact.number}
-            onRemoveContact={() => onRemoveContact(id)}
-          />
-        ))}
+      {contacts.map(({ id, name, number }) => (
+        <li key={id} className={s.contact__item}>
+          {name}: {number}
+          <button
+            className={s.button__submit}
+            onClick={() => onRemoveContact(id)}
+          >
+            Delete
+          </button>
+        </li>
+      ))}
     </ul>
   );
 };

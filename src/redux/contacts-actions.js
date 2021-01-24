@@ -11,9 +11,9 @@ const addContact = (name, number) => ({
   },
 });
 
-const removeContact = (contactId) => ({
+const removeContact = (id) => ({
   type: types.REMOVE,
-  payload: contactId,
+  payload: id,
 });
 
 const changeFilter = (value) => ({

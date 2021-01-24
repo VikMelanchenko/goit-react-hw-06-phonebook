@@ -8,7 +8,7 @@ const items = (contacts = [], { type, payload }) => {
       return [...contacts, payload];
 
     case types.REMOVE:
-      return filter((contact) => contact.id !== payload);
+      return contacts.filter(({ id }) => id !== payload);
 
     default:
       return contacts;

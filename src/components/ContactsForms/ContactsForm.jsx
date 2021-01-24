@@ -37,6 +37,14 @@ function ContactsForms({ onSubmit }) {
     setNumber('');
   };
 
+  // check unique contact name
+  //   if (contacts.find((contact) => contact.name === name)) {
+  //     return toast.error(`${name} is already in contacts`);
+  //   }
+
+  //   setContacts((prevState) => [contact, ...prevState]);
+  // };
+
   return (
     <form className={s.form__item} onSubmit={handleSubmit}>
       <label>
