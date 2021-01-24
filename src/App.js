@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import ContactsForms from './components/ContactsForms/ContactsForm';
 
@@ -6,10 +6,10 @@ import ContactList from './components/ContactList/ContactList';
 
 import Filter from './components/Filter/Filter';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
-import useLocalStorage from './hooks/useLocalStorage';
+// import useLocalStorage from './hooks/useLocalStorage';
 
 export default function App() {
   // const [contacts, setContacts] = useLocalStorage('contacts', []);
@@ -30,10 +30,8 @@ export default function App() {
 
   return (
     <>
-      <h1>Phonebook</h1>
       <ContactsForms onSubmit={formSubmitHandler} />
       <ToastContainer position="top-center" autoClose={2000} />
-      <h1>Contacts</h1>
       <Filter />
       <ContactList />
     </>

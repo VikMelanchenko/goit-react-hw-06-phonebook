@@ -1,11 +1,59 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.panel__container {
+  background: rgb(27, 20, 30);
+  padding: 10px;
+  width: 100%;
+  margin: auto;
+  max-width: 25em;
+  border-radius: 30px;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  font-size: 15px;
+  text-align: center;
+}
+
+span {
+  font-size: 12px;
+}
+
+ul {
+  list-style-position: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  border: dashed green 2px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 .form__item {
-  //   margin: 10% auto 0 auto;
-  padding: 30px;
-  width: 400px;
+  margin: auto;
+  padding: 20px;
+  width: 340px;
   height: auto;
   overflow: hidden;
   background: white;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .input__item {
@@ -25,18 +73,15 @@
   }
 }
 .button__submit {
-  padding: 15px 30px;
+  padding: 10px 20px;
   width: auto;
-  background: #1abc9c;
+  background: black;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   color: white;
   cursor: pointer;
   display: inline-block;
-
-  clear: right;
   margin-left: 10px;
-  margin-bottom: 10px;
 }
 
 .contact__list {

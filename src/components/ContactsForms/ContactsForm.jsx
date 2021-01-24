@@ -1,12 +1,16 @@
 import s from './ContactsForm.module.scss';
 import { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { getContacts } from '../../redux/contacts-selectors';
 
 import contactsActions from '../../redux/contacts-actions';
 
-function ContactsForms({ onSubmit }) {
+export default function ContactsForms({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,6 +32,16 @@ function ContactsForms({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (name === '') {
+      return toast.info('Please input name');
+    }
+
+    // check unique contact name
+    if (contacts.find((contact) => contact.name === name)) {
+      return toast.error(`${name} is already in contacts`);
+    }
+
+    dispatch(contactsActions.addContact(name, number));
     onSubmit(name, number);
     onReset();
   };
@@ -37,48 +51,44 @@ function ContactsForms({ onSubmit }) {
     setNumber('');
   };
 
-  // check unique contact name
-  //   if (contacts.find((contact) => contact.name === name)) {
-  //     return toast.error(`${name} is already in contacts`);
-  //   }
-
-  //   setContacts((prevState) => [contact, ...prevState]);
-  // };
-
   return (
-    <form className={s.form__item} onSubmit={handleSubmit}>
-      <label>
-        Name
-        <input
-          className={s.input__item}
-          type="text"
-          name="name"
-          value={name}
-          placeholder="enter contact name"
-          onChange={handleChange}
-        ></input>
-      </label>
-      <label>
-        Pnone number
-        <input
-          className={s.input__item}
-          type="tel"
-          name="number"
-          value={number}
-          placeholder="enter phone number"
-          onChange={handleChange}
-        ></input>
-      </label>
-      <button className={s.button__submit} type="submit">
-        Add contact
-      </button>
-    </form>
+    <div className={s.panel__container}>
+      <h1>Phonebook</h1>
+      <form className={s.form__item} onSubmit={handleSubmit}>
+        <h2>Add a new contact</h2>
+        <label>
+          Name
+          <input
+            className={s.input__item}
+            type="text"
+            name="name"
+            value={name}
+            placeholder="enter contact name"
+            onChange={handleChange}
+          ></input>
+        </label>
+        <label>
+          Pnone number
+          <input
+            className={s.input__item}
+            type="tel"
+            name="number"
+            value={number}
+            placeholder="enter phone number"
+            onChange={handleChange}
+          ></input>
+        </label>
+        <button className={s.button__submit} type="submit">
+          Add contact
+        </button>
+      </form>
+    </div>
   );
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  onSubmit: (name, number) =>
-    dispatch(contactsActions.addContact(name, number)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   onSubmit: (name, number) =>
+//     dispatch(contactsActions.addContact(name, number)),
+// });
 
-export default connect(null, mapDispatchToProps)(ContactsForms);
+// export default connect(null, mapDispatchToProps)(ContactsForms);
