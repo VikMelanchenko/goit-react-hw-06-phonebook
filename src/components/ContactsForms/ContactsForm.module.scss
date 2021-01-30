@@ -33,19 +33,6 @@ span {
   font-size: 12px;
 }
 
-ul {
-  list-style-position: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  border: dashed green 2px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
 .form__item {
   margin: auto;
   padding: 20px;
@@ -56,6 +43,19 @@ li {
   border-radius: 20px;
 }
 
+.filter__item {
+  margin: 10px 5px;
+  padding: 5px 5px;
+  width: 98%;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .input__item {
   margin: 15px 0;
   padding: 15px 10px;
@@ -64,8 +64,10 @@ li {
   border: 1px solid #bbb;
   border-radius: 20px;
   display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
   box-sizing: border-box;
 
   &:focus {

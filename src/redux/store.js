@@ -3,6 +3,7 @@ import logger from 'redux-logger';
 // import { composeWithDevTools } from 'redux-devtools-extension'; - при установке пакета @reduxjs/toolkit' DevTools больше не нужны
 // из package.json тоже удалила
 import contactsReducer from './contacts-reducer';
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -13,7 +14,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 const middleware = [
   ...getDefaultMiddleware({

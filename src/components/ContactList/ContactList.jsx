@@ -2,6 +2,7 @@ import s from '../ContactsForms/ContactsForm.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import contactsActions from '../../redux/contacts-actions';
 import { getVisibleContacts } from '../../redux/contacts-selectors';
+import Filter from '../Filter/Filter';
 
 // список добавленных контактов и удаление при клике на кнопку
 const ContactList = () => {
@@ -14,7 +15,7 @@ const ContactList = () => {
 
   return (
     <div className={s.panel__container}>
-      <h1>Contacts</h1>
+      <Filter />
       <ul className={s.form__item}>
         {contacts.map(({ id, name, number }) => (
           <li key={id} className={s.input__item}>

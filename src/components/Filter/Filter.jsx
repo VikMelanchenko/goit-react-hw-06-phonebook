@@ -9,11 +9,11 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={s.panel__container}>
+    <div>
       <label>
         <h1>Find contacts by name</h1>
         <input
-          className={s.input__item}
+          className={s.filter__item}
           type="text"
           value={value}
           onChange={(event) =>
